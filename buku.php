@@ -35,7 +35,7 @@
                      <td><?php echo $data['tahun_terbit']; ?></td>
                      <td>
                         <a class="fa fa-edit btn-info btn-circle" href="?page=fungsi/ubah_buku&&id=<?php echo $data['id_buku']; ?>"></a>
-                        <a class="btn btn-danger btn-circle" href="?page=fungsi/hapus_buku&&id=<?php echo $data['id_buku']; ?>"><i class="fas fa-trash"></i></a>
+                         <a onclick="return confirm('asli bli pen diapus kuh?')" class="btn btn-danger btn-circle" href="?page=fungsi/hapus_buku&&id=<?php echo $data['id_buku']; ?>"><i class="fas fa-trash"></i></a>
                      </td>
                   </tr>
                <?php
