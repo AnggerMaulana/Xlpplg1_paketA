@@ -1,5 +1,5 @@
 <?php
-include "koneksi.php";
+require 'fungsi/koneksi.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +8,7 @@ include "koneksi.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login ke Perpustakaan Digital</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="aset/css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-light">
 
@@ -19,19 +19,19 @@ include "koneksi.php";
                 <div class="card-body">
                     <h5 class="card-title text-center">Login</h5>
                     <?php
-                         if(isset($_POST['login'])) {
-                             $username = $_POST['username'];
-                             $password = ($_POST['password']);
+                        if( isset($_POST['login'])) {
+                            $username = $_POST['username'];
+                            $password = md5($_POST['password']);
                             
-                             $data = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username' and password='$password'");
-                             $cek = mysqli_num_rows($data);
-                             if($cek > 0) {
-                                 $_SESSION['user'] = mysqli_fetch_array($data);
-                                 echo '<script>alert("Selamat datang di Perpustakaan Digital!"); location.href="index.php";</script>';
-                             } else {
-                                 echo '<script>alert("username/password tidak sesuai")</script>';
-                             }
-                         }
+                            $data = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username' and password='$password'");
+                            $cek = mysqli_num_rows($data);
+                            if($cek > 0) {
+                                $_SESSION['user'] = mysqli_fetch_array($data);
+                                echo '<script>alert("Selamat datang di Perpustakaan Digital!"); location.href="index.php";</script>';
+                            } else {
+                                echo '<script>alert("username kro password salah, coba ulang ")</script>';
+                            }
+                        }
                     ?>
                     <form method="post">
                         <div class="mb-3">
@@ -55,6 +55,6 @@ include "koneksi.php";
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-<script src="aset/js/login.js"></script>
+<script src="js/g.js"></script>
 </body>
 </html>

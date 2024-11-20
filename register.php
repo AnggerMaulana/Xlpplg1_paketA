@@ -69,7 +69,6 @@ require 'fungsi/koneksi.php';
                             <select class="form-select" name="level" required>
                                 <option value="" disabled selected>Pilih role</option>
                                 <option value="admin">Admin</option>
-                                <option value="petugas">Petugas</option>
                                 <option value="peminjam">Peminjam</option>
                             </select>
                         </div>

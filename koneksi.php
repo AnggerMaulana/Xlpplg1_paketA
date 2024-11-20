@@ -1,4 +1,3 @@
-<?php
+<?php 
 session_start();
-$koneksi = mysqli_connect('localhost','root','','digital');
-?>
+$koneksi = mysqli_connect('localhost', 'root', '', 'perpus_digital');

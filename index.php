@@ -91,13 +91,10 @@ if(! isset($_SESSION['user'])) {
                     <span>Peminjaman</span>
                 </a>
             </li>
-            <?php
-                 
-            ?>
             <li class="nav-item <?php echo (isset($_GET['page']) && $_GET['page'] == 'pengembalian') ? 'active' : ''; ?>">
                 <a class="nav-link collapsed" href="?page=pengembalian"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-arrow-left"></i>
+                    <i class="fas fa-book"></i>
                     <span>Pengembalian</span>
                 </a>
             </li>
