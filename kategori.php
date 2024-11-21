@@ -4,7 +4,7 @@
    </div>
    <br>
    <div class="col-md-6 mb-4 text-left">
-      <a href="?page=fungsi/tambah_buku" class="btn btn-primary">Tambah Kategori</a>
+      <a href="?page=fungsi/tambah_kategori" class="btn btn-primary">Tambah Kategori</a>
    </div>
    <div class="card-body">
       <div class="table-responsive">
@@ -27,7 +27,7 @@
                      <td><?php echo $data['kategori']; ?></td>
                      <td>
                         <a class="fa fa-edit btn-info btn-circle" href="?page=fungsi/ubah_kategori&&id=<?php echo $data['id_kategori']; ?>"></a>
-                        <a class="btn btn-danger btn-circle" href="?page=fungsi/hapus_kategori&&id=<?php echo $data['id_kategori']; ?>"><i class="fas fa-trash"></i></a>
+                        <a onclick="return confirm('asli bli pen diapus kuh?')" class="btn btn-danger btn-circle" href="?page=fungsi/hapus_kategori&&id=<?php echo $data['id_kategori']; ?>"><i class="fas fa-trash"></i></a>
                      </td>
                   </tr>
                <?php
